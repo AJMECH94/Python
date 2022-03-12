@@ -1,0 +1,17 @@
+VIRTUAL ENVIRONMENT IN LINUX UBANTU(20.04) 
+
+1.create virutual environment
+--> virtualenv <env-name>
+
+2.activate virtual environment
+--> source <env-name>/bin/activate
+
+3.deactivate env
+--> deactivate
+
+4.create requirements.txt file
+--> pip3 freeze > requirements.txt
+
+5.auto install requirement.txt in another environment
+-->pip3 install -r requirements.txt
+
