@@ -1,3 +1,37 @@
+Exist and Not Exist Clause
+TABLE
+Create Table customer(C_ID varchar(5) primary key ,CNAME varchar(20),Loc varchar(20))
+
+insert into customer values('C1','AMIT','PUNE')
+insert into customer values('C2','Sumit','Delhi')
+insert into customer values('C3','varun','Mumbai')
+insert into customer values('C4','snehal','Latur')
+insert into customer values('C5','Raj','Sangli')
+insert into customer values('C6','Mohit','Satara')
+
+create table order1(OID int primary key, CID varchar(5),groceries varchar(20))
+
+insert into order1 values(1,'C2','almonds')
+insert into order1 values(2,'C3','deo soap')
+insert into order1 values(3,'C1','milk')
+insert into order1 values(4,'C2','soap') 
+insert into order1 values(5,'C4','dishes')
+insert into order1 values(6,'C2','rice')
+select * from customer
+
+e.g.select * from customer  c where exists (select * from order1 o where c.c_id = o.cid)
+ans-->C_ID  CNAME                Loc                 
+----- -------------------- --------------------
+C1    AMIT                 PUNE                
+C2    Sumit                Delhi               
+C3    varun                Mumbai              
+C4    snehal               Latur               
+
+e.g. select * from customer c where not exists (select * from order1 o where c.c_id = o.cid)
+ans-->C_ID  CNAME                Loc                 
+----- -------------------- --------------------
+C5    Raj                  Sangli              
+C6    Mohit                Satara    
 ajinkya
 ganesh
 onkar
