@@ -55,7 +55,7 @@ class FiLe:
             except Exception as msg:
                 print(msg)
             finally:
-                print("File sorting Completed|done")
+                print("File sorted")
 
 f = FiLe()
 f.sort()
